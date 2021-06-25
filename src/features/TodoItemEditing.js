@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { handleUpdate, toggleEditMode, deleteTask } from "./redux/todo";
-import "./styles.css";
+import { handleUpdate, toggleEditMode, deleteTask } from "./todoSlice";
+import "../styles.css";
 
 const TodoItemEditing = ({ task, index }) => {
   const dispatch = useDispatch();
@@ -24,8 +24,15 @@ const TodoItemEditing = ({ task, index }) => {
           onChange={(e) => setNewValue(e.target.value)}
         />
         <div className="buttons-div">
-          <button type="submit">Update</button>
-          <button onClick={() => dispatch(deleteTask(index))}>Delete</button>
+          <button className="btn btn-success" type="submit">
+            Update
+          </button>
+          <button
+            className="btn btn-danger"
+            onClick={() => dispatch(deleteTask(index))}
+          >
+            Delete
+          </button>
         </div>
       </form>
     </div>

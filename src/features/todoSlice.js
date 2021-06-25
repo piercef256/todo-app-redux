@@ -6,11 +6,11 @@ export const todoSlice = createSlice({
     tasks: [
       {
         text: "Feed dog",
-        isEditing: true
+        isEditing: false
       },
       {
         text: "Return package",
-        isEditing: false
+        isEditing: true
       },
       {
         text: "Study Node.js",
@@ -45,15 +45,6 @@ export const todoSlice = createSlice({
       const newTasks = [...state.tasks];
       newTasks[index].text = newValue;
       state.tasks = newTasks;
-    },
-    increment: (state) => {
-      state.tasks += 1;
-    },
-    decrement: (state) => {
-      state.tasks -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.tasks += action.payload;
     }
   }
 });
@@ -63,10 +54,7 @@ export const {
   handleUpdate,
   toggleEditMode,
   deleteTask,
-  addTask,
-  increment,
-  decrement,
-  incrementByAmount
+  addTask
 } = todoSlice.actions;
 
 export default todoSlice.reducer;

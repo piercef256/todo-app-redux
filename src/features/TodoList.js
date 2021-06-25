@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTask } from "./redux/todo";
-import "./styles.css";
+import { addTask } from "./todoSlice";
+import "../styles.css";
 import TodoItem from "./TodoItem";
 import TodoItemEditing from "./TodoItemEditing";
 
@@ -19,16 +19,20 @@ const TodoList = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Todo List</h1>
       <div className="todo-list">
-        {tasks.map((task, index) =>
-          task.isEditing ? (
-            <TodoItemEditing task={task} index={index} />
-          ) : (
-            <TodoItem task={task} index={index} />
-          )
-        )}
+        <ul class="list-group list-group-flush">
+          <li className="list-group-item">
+            {tasks.map((task, index) =>
+              task.isEditing ? (
+                <TodoItemEditing task={task} index={index} />
+              ) : (
+                <TodoItem task={task} index={index} />
+              )
+            )}
+          </li>
+        </ul>
       </div>
       <div className="add-task-form-div">
         <form className="add-task-form" onSubmit={handleSubmit}>
@@ -36,10 +40,12 @@ const TodoList = () => {
             className="task-input"
             type="text"
             value={value}
-            placeholder="Enter a title for this task…"
+            placeholder="Enter task here…"
             onChange={(e) => setValue(e.target.value)}
           />
-          <button type="submit">Submit New Task</button>
+          <button className="btn btn-primary" type="submit">
+            Submit New Task
+          </button>
         </form>
       </div>
     </div>
