@@ -27,12 +27,6 @@ const TodoItemEditing = ({ task, index }) => {
           <button className="btn btn-success" type="submit">
             Update
           </button>
-          <button
-            className="btn btn-danger"
-            onClick={() => dispatch(deleteTask(index))}
-          >
-            Delete
-          </button>
         </div>
       </form>
     </div>

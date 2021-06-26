@@ -21,33 +21,37 @@ const TodoList = () => {
 
   return (
     <div className="container">
-      <h1>Todo List</h1>
-      <div className="todo-list">
-        <ul class="list-group list-group-flush">
-          <li className="list-group-item">
-            {tasks.map((task, index) =>
-              task.isEditing ? (
-                <TodoItemEditing task={task} index={index} />
-              ) : (
-                <TodoItem task={task} index={index} />
-              )
-            )}
-          </li>
-        </ul>
-      </div>
-      <div className="add-task-form-div">
-        <form className="add-task-form" onSubmit={handleSubmit}>
-          <input
-            className="task-input"
-            type="text"
-            value={value}
-            placeholder="Enter task here…"
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <button className="btn btn-primary" type="submit">
-            Submit New Task
-          </button>
-        </form>
+      <div className="row">
+        <div className="col-md-12">
+          <h1>Todo List</h1>
+          <div className="todo-list">
+            <ul class="list-group list-group-flush">
+              <li className="list-group-item">
+                {tasks.map((task, index) =>
+                  task.isEditing ? (
+                    <TodoItemEditing task={task} index={index} />
+                  ) : (
+                    <TodoItem task={task} index={index} />
+                  )
+                )}
+              </li>
+            </ul>
+          </div>
+          <div className="add-task-form-div">
+            <form className="add-task-form" onSubmit={handleSubmit}>
+              <input
+                className="task-input"
+                type="text"
+                value={value}
+                placeholder="Enter task here…"
+                onChange={(e) => setValue(e.target.value)}
+              />
+              <button className="btn btn-primary" type="submit">
+                Submit New Task
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );
