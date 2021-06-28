@@ -22,8 +22,6 @@ body {
 .todo-item {
   display: flex;
   justify-content: space-between;
-  border: solid 1px;
-  border-color: black;
   margin: 0.5em;
   padding: 0.5em;
 }
@@ -31,8 +29,6 @@ body {
 .edit-task-form {
   display: flex;
   justify-content: space-between;
-  border: solid 1px;
-  border-color: black;
   margin: 0.5em;
   padding: 0.5em;
 }

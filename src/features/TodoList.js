@@ -25,16 +25,16 @@ const TodoList = () => {
         <div className="col-md-12">
           <h1>Todo List</h1>
           <div className="todo-list">
-            <ul class="list-group list-group-flush">
-              <li className="list-group-item">
-                {tasks.map((task, index) =>
-                  task.isEditing ? (
+            <ul className="list-group list-group-flush">
+              {tasks.map((task, index) => (
+                <li key={index} className="list-group-item">
+                  {task.isEditing ? (
                     <TodoItemEditing task={task} index={index} />
                   ) : (
                     <TodoItem task={task} index={index} />
-                  )
-                )}
-              </li>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="add-task-form-div">
