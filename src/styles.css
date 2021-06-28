@@ -10,6 +10,10 @@ body {
   background: pink;
 }
 
+.list-group-item {
+  word-wrap: break-word;
+}
+
 .todo-list {
   display: flex;
   flex-direction: column;
@@ -17,6 +21,8 @@ body {
 
 .container {
   background: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .todo-item {

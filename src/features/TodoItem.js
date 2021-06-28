@@ -7,7 +7,10 @@ const TodoItem = ({ task, index }) => {
   const dispatch = useDispatch();
   return (
     <div className="todo-item">
-      <span onClick={() => dispatch(toggleEditMode(index))}>{task.text}</span>
+      <span>
+        {" "}
+        <p onClick={() => dispatch(toggleEditMode(index))}>{task.text}</p>
+      </span>
       <div className="buttons-div">
         <button
           className="btn btn-info"
