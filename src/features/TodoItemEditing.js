@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { handleUpdate, toggleEditMode, deleteTask } from "./todoSlice";
+import { handleUpdate, toggleEditMode } from "./todoSlice";
 import "../styles.css";
 
 const TodoItemEditing = ({ task, index }) => {
