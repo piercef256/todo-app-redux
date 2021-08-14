@@ -6,26 +6,26 @@ import "../styles.css";
 const TodoItem = ({ task, index }) => {
   const dispatch = useDispatch();
   return (
-    <div className="todo-item">
-      <span>
-        {" "}
-        <p onClick={() => dispatch(toggleEditMode(index))}>{task.text}</p>
-      </span>
-      <div className="buttons-div">
-        <button
-          className="btn btn-info"
+    <a href={() => false} className="list-group-item list-group-item-action">
+      <div className="d-flex w-100 justify-content-between">
+        <div
+          className="d-flex w-100"
           onClick={() => dispatch(toggleEditMode(index))}
         >
-          Edit
-        </button>
-        <button
-          className="btn btn-danger"
-          onClick={() => dispatch(deleteTask(index))}
-        >
-          Delete
-        </button>
+          <h5 className="mb-1">{index + 1}</h5>
+          <div className="ms-1">{task.text}</div>
+        </div>
+        <div>
+          <button
+            type="submit"
+            className="btn btn-danger ms-1"
+            onClick={() => dispatch(deleteTask(index))}
+          >
+            X
+          </button>
+        </div>
       </div>
-    </div>
+    </a>
   );
 };
 

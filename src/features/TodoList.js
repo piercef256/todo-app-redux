@@ -21,38 +21,53 @@ const TodoList = () => {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-md-12">
-          <h1>Todo List</h1>
-          <div className="todo-list">
-            <ul className="list-group list-group-flush">
-              {tasks.map((task, index) => (
-                <li key={index} className="list-group-item">
-                  {task.isEditing ? (
-                    <TodoItemEditing task={task} index={index} />
-                  ) : (
-                    <TodoItem task={task} index={index} />
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="add-task-form-div">
-            <form className="add-task-form" onSubmit={handleSubmit}>
-              <input
-                className="task-input"
-                type="text"
-                value={value}
-                placeholder="Enter task here…"
-                onChange={(e) => setValue(e.target.value)}
-              />
-              <button className="btn btn-primary" type="submit">
-                Submit New Task
-              </button>
-            </form>
+      <section className="vh-100">
+        <div className="container py-5 h-100">
+          <div className="row d-flex justify-content-center align-items-center h-100">
+            <div className="col col-lg-9 col-xl-7">
+              <div className="card rounded-3">
+                <div className="card-body p-4">
+                  <h4 className="text-center my-3">To Do App</h4>
+                  <p className="text-center">Click on task to edit</p>
+                  <div className="list-group">
+                    {tasks.map((task, index) => (
+                      <React.Fragment key={index}>
+                        {task.isEditing ? (
+                          <TodoItemEditing task={task} index={index} />
+                        ) : (
+                          <TodoItem task={task} index={index} />
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                  <hr />
+                  <div className="form-div">
+                    <div>
+                      <input
+                        className="form-control"
+                        type="text"
+                        value={value}
+                        placeholder="Enter task here…"
+                        onChange={(e) => setValue(e.target.value)}
+                      />
+                    </div>
+
+                    <div>
+                      <button
+                        className="btn btn-primary"
+                        type="submit"
+                        onClick={handleSubmit}
+                      >
+                        Submit New Task
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
