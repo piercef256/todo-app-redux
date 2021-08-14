@@ -44,21 +44,21 @@ const TodoList = () => {
                   <div className="form-div">
                     <div>
                       <input
-                        className="form-control"
+                        className="input new-task form-control"
                         type="text"
                         value={value}
-                        placeholder="Enter task here…"
+                        placeholder="Enter new task..."
                         onChange={(e) => setValue(e.target.value)}
                       />
                     </div>
 
                     <div>
                       <button
-                        className="btn btn-primary"
+                        className="btn btn-success"
                         type="submit"
                         onClick={handleSubmit}
                       >
-                        Submit New Task
+                        +
                       </button>
                     </div>
                   </div>

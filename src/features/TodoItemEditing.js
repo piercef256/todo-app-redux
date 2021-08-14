@@ -31,7 +31,7 @@ const TodoItemEditing = ({ task, index }) => {
         <div>
           <button
             onClick={() => update(index)}
-            className="btn btn-success"
+            className="btn btn-primary"
             type="submit"
           >
             Update
